@@ -1,0 +1,545 @@
+@import 'vars';
+
+@keyframes myAnim {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body {
+    background: rgba(255, 255, 255, 1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.link {
+    transition: all 0.3s;
+}
+
+.button {
+    transition: all 0.3s;
+}
+
+.network__icon path {
+    transition: fill 0.3s;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.footer__link:hover {
+    color: #000;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #FFFFFF;
+}
+
+.network__icon:hover path {
+    fill: #000
+}
+
+.top {
+    height: 400px;
+    background-image: url(./img/cart/background_cart.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__nav_mobile {
+        display: none;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 64px;
+
+        margin-top: 127px;
+        color: $color-text;
+        font-style: normal;
+    }
+}
+
+.header {
+    height: 77px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.80);
+
+    &__input {
+        width: 288px;
+        height: 41px;
+        border-radius: 20px;
+        border: 1px;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid rgba(255, 255, 255, 1);
+        color: $color-text;
+        padding-left: 32px;
+        padding-right: 32px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 16px;
+    }
+
+    &__input::placeholder {
+        color: $color-text;
+    }
+
+    &__link {
+        font-size: 16px;
+
+        color: $color-text;
+        font-style: normal;
+        font-weight: 400;
+
+    }
+
+    &__nav {
+        display: flex;
+        gap: $gap;
+    }
+}
+
+
+
+.cart {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap;
+    margin-top: 64px;
+
+    &__content {
+        grid-column: span 8;
+    }
+
+    &__name-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+    }
+
+    &__name {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &__item-box {
+        border-top: 0.5px solid #CACDD8;
+        padding-top: 25px;
+        padding-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__input {
+        width: 21px;
+        height: 51px;
+        flex-shrink: 0;
+        font-family: Poppins;
+        border-radius: 6px;
+        background: #F7F6F6;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-style: none;
+
+    }
+
+    &__form {
+        grid-column: span 4;
+        border-radius: 20px;
+        background: #F7F6F6;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    &__button-box {
+        display: flex;
+        gap: 7px;
+        flex-direction: row;
+        grid-column: span 4;
+    }
+
+    &__button {
+        border: 1px solid #000;
+        box-sizing: border-box;
+        border-radius: 50px;
+        width: 200px;
+        height: 37px;
+        color: #020202;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        background: none;
+        font-family: inherit;
+    }
+}
+
+.form {
+
+    &__tilte {
+        padding-top: 42px;
+        padding-bottom: 35px;
+        color: #000;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__input {
+        width: 288px;
+        border: none;
+        border-bottom: 1px solid #CACDD8;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        background: #F7F6F6;
+        margin-bottom: 41px;
+    }
+
+    &__text-box {
+        margin-top: 25px;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        color: #000;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    &__price {
+        color: #000;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__button {
+        border: 1px solid #040404;
+        box-sizing: border-box;
+        border-radius: 20px;
+        width: 275px;
+        height: 46px;
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: inherit;
+        animation: myAnim 2s ease 0s 1 normal forwards;
+    }
+
+}
+
+.item {
+    display: flex;
+    gap: 32px;
+    height: 173px;
+
+    &__img {
+        width: 173px;
+        flex-shrink: 0;
+    }
+
+    &__info {
+        width: 276px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &__name {
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__text {
+        color: #888;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__price {
+        color: #050505;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__link-box {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        color: #000;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 210%;
+        text-decoration-line: underline;
+    }
+
+}
+
+.product-box {
+    margin-top: 64px;
+}
+
+.mid__title {
+    font-weight: 600;
+    font-size: 48px;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.product {
+    width: 378px;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $gap;
+        flex-direction: row;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 24px;
+
+        color: #000000;
+        margin-bottom: 8px;
+        margin-top: 10px;
+    }
+
+    &__text {
+        font-size: 14px;
+
+        color: #888888;
+        margin-bottom: 12px;
+    }
+
+    &__price-box {
+        display: flex;
+        gap: $gap;
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 24px;
+
+        color: #050505;
+    }
+
+    &__price_old {
+        font-weight: 500;
+        font-size: 24px;
+
+        text-decoration-line: line-through;
+        color: #888888;
+    }
+
+
+
+
+
+
+}
+
+.bottom__link {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    text-decoration-line: underline;
+}
+
+
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+
+
+.footer {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    background: #F7F6F6;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+
+    &__logo {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+
+    }
+
+    &__content-box {
+        width: 792px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__info {
+        display: flex;
+        gap: 129px;
+    }
+
+    &__items-box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__title {
+        color: #000;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__link {
+        font-weight: 500;
+        font-size: 14px;
+
+        color: #888888;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__network-box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__from-box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 275px;
+    }
+
+    &__from-text {
+        margin-bottom: 4px;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+
+    }
+
+    &__input::placeholder {
+        color: #C4C4C4;
+    }
+
+    &__input {
+        background: #FFFFFF;
+        border: 1px solid #c4c4c4;
+        box-sizing: border-box;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+
+        color: #000;
+        height: 46px;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: inherit;
+    }
+
+    &__button {
+        background: rgba(222, 215, 215, 0.41);
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 20px;
+        height: 46px;
+        font-size: 15px;
+
+        color: #000000;
+        font-family: inherit;
+    }
+}
+
+.link-box__bottom {
+    margin-top: 32px;
+}
+
+.bottom__link::after {
+    content: "Перейти в каталог";
+}
+
+@import '_tablet';
+@import 'mobile';
